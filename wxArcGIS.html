@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>天地图·无锡</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<!--<link rel="stylesheet" href="http://www.xymap.com.cn/arcgis_js_api/library/3.16/3.16/dijit/themes/claro/claro.css" />-->
+		<link type="text/css" rel="stylesheet" href="http://localhost:88/arcgisV319/3.19/dijit/themes/claro/claro.css">
+		<!--<link rel="stylesheet" type="text/css" href="http://www.xymap.com.cn/arcgis_js_api/library/3.16/3.16/esri/css/esri.css" />-->
+		<link type="text/css" rel="stylesheet" href="http://localhost:88/arcgisV319/3.19/esri/css/esri.css">
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+		<!--&lt;!&ndash;<script type="text/javascript" src="index.js?v1.0"></script>&ndash;&gt;-->
+		<!--<script type="text/javascript" src="layers.js"></script>-->
+	</head>
+	<body>
+		<div class="left">
+			<header>初级：图层加载和切换</header>
+			<div class="layerControl">
+				<input type="checkbox" name="wg_lay" id="wg_lay" value=""/><label for="">网格图层</label><br/>
+				<input type="checkbox" name="cam_lay" id="cam_lay" value=""/><label for="">摄像头图层</label><br/>
+				<input type="checkbox" name="dt_lay" id="dt_lay" value=""/><label for="">电梯图层</label>
+				<div class="remark">
+					功能说明：
+					<ul>
+						<li>加载无锡天地图底图</li>
+						<li>网格透明度为0.5</li>
+						<li>摄像头/电梯图标可以随意</li>
+						<li>网格/摄像头/电梯要能相互切换</li>
+						<li>点击图层能显示要素信息</li>
+					</ul>
+				</div>
+			</div>
+			<hr />
+			<header>初级：标绘点线面</header>
+			<div class="draw">
+				<button data-toggle="modal" data-target="#myModal">根据坐标画点</button><br/>
+				<button id="point">手工画点</button><br/>
+				<button id="line">手工画线</button><br/>
+				<button id="fill">手工画面</button><br/>
+				<button id="cicle">手工画圆</button>
+				<div class="remark">
+					功能说明：
+					<ul>
+						<li>标记点、线、面，标记样式随意</li>
+						<li>标记完要记录信息，内容随意</li>
+						<li>点击标记显示该信息</li>
+						<li>如果有需要使用弹窗，可以自己写，或者使用artDialog插件</li>
+					</ul>
+				</div>
+			</div>
+			<hr />
+			<header>中级：查询</header>
+			<div id="search" class="search">
+				模糊查询
+				<button id="btn">查询</button>
+				<input type="text" name="" id="like_search" value="" /><br />
+				区域检索<button>绘制检索区域</button>
+				<div class="remark">
+					功能说明：
+					<ul>
+						<li>仅查询表内的信息</li>
+						<li>区域检索既要显示检索区域，又要显示查询出来的结果</li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="right">
+			<header><span class="pointer">◀</span>显示查询结果列表<span class="pointer">▶</span></header>
+			<div id="result" class="result">
+				<!--TODO-->
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+					<li>9</li>
+					<li>10</li>
+				</ul>
+			</div>
+			<hr />
+			<header>显示查询结果详情</header>
+			<div id="detail" class="detail">
+				<!--TODO-->
+				 详细信息...
+			</div>
+		</div>
+		<div class="middle">
+			<!--显示天地图-->
+			<div id="mappanel"></div>
+			<!--摄像头-->
+			<div id="camera"></div>
+			<!--电梯-->
+			<div id="elebox"></div>
+			<!--网格-->
+			<div id="wangge"></div>
+		</div>
+
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="modal-title" id="myModalLabel">
+							输入经纬度
+						</h4>
+					</div>
+					<div class="modal-body">
+						经度：<input class="form-control" id="x" type="text"><br/>
+						纬度：<input class="form-control" id="y" type="text">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button id="jinwei" type="button" class="btn btn-primary" data-dismiss="modal">提交</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+
+
+
+		<script type="text/javascript" src="jquery/jquery-1.11.1.min.js"></script>
+		<!--<script type="text/javascript" src="http://www.xymap.com.cn/arcgis_js_api/library/3.16/3.16/init.js"></script>-->
+		<script type="text/javascript" src="tdt.js"></script>
+		<script type="text/javascript" src="http://localhost:88/arcgisV319/3.19/init.js"></script>
+		<script type="text/javascript" src="demo.js"></script>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+	</body>
+</html>

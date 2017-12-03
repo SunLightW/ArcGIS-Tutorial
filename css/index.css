@@ -1,0 +1,45 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+ol {
+    margin: 0;
+    padding-left: 20px;
+}
+.left {
+    width: 200px;
+    height: 100%;
+    float: left;
+    border-right: 1px solid;
+}
+.left::after {
+    clear: all;
+}
+.right {
+    width: 200px;
+    height: 100%;
+    float: right;
+    border-left: 1px solid;
+}
+.right::after {
+    clear: all;
+}
+.middle {
+    margin: 0 200px;
+    height: 100%;
+}
+#mappanel {
+    height: 100%;
+}
+.remark {
+    margin-top: 10px;
+    font-size: 12px;
+}
+header {
+    text-align: center;
+    font-weight: bold;
+}
+.pointer {
+    cursor: pointer;
+}
