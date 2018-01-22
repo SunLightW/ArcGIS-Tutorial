@@ -44,7 +44,6 @@ var SQ_BJ_FILL_COLOR;//SQ
 var PROMINENT_FILL_COLOR;//HL
 
 /***********RENDERER***************/
-
 var SQ_RENDERER;//SQ
 var SQRJ_RENDERER;//SQRJ
 var SQYQ_RENDERER;//SQYQ
