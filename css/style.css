@@ -1,0 +1,544 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+/*---------public-------------*/
+
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td {
+  padding: 0;
+  margin: 0;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Microsoft YaHei", 微软雅黑, SimHei, "黑体", SimSun, "宋体", Arial, Helvetica, sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+img {
+  display: inline-block;
+  vertical-align: top;
+  border: 0 none;
+  -ms-interpolation-mode: bicubic;
+  image-rendering: optimizeQuality;
+}
+
+button {
+  cursor: pointer;
+  border: 0 none;
+}
+
+input, textarea {
+  background: transparent;
+  border: 0 none;
+}
+
+textarea {
+  border: 0 none;
+  resize: none;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+i, em, cite {
+  font-style: normal;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+input: -webkit-autofill {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+.fixed:after {
+  display: block;
+  height: 0;
+  clear: both;
+  font-size: 0;
+  line-height: 0;
+  content: '.';
+  visibility: hidden;
+}
+
+.fixed {
+  zoom: 1;
+}
+
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  clear: both;
+  *zoom: 1;
+}
+
+body, input, select, button, textarea {
+  outline: none;
+  border-radius: 0px;
+}
+
+a, input, textarea, p, span, h2, em, li, div {
+  text-decoration: none;
+  outline: none;
+}
+
+input, textarea {
+  font-family: "Microsoft YaHei";
+}
+
+.yisimain{
+	width: 100%;
+	height: 100%;
+	min-width:1380px ;
+	overflow: auto;
+
+}
+/*.y_header{*/
+	/*width: 100%;*/
+	/*height: 100px;*/
+	/*background-color: #4a5b79;*/
+/*}*/
+.y_header div{
+	float:left;
+}
+/*.y_header div img{*/
+	/*margin-left: 20px;*/
+	/*margin-top: 10px;*/
+/*}*/
+/*.y_header div span{*/
+	 /*color:#fff;*/
+	 /*font-size: 36px;*/
+	 /*line-height: 100px;*/
+	 /*margin-left: 17px;*/
+/*}*/
+.y_header ul{
+	float:right;
+}
+.y_header ul li{
+	float:left;
+	text-align: center;
+	margin-right: 25px;
+	cursor: pointer;
+}
+.y_header ul li img{
+		margin-top: 22px;
+}
+.y_header ul li p{
+		font-size: 16px;
+		color:#fff;
+		margin-top: 13px;
+}
+.v_foot{
+		width: 100%;
+		height: 32px;
+		background-color: #4a5b79;
+}
+.v_foot span{
+		color:#fff;
+		font-size: 16px;
+		line-height: 32px;
+	}
+.v_foot .first{
+		margin-left: 20px;
+}
+.v_foot .second{
+	float:right;
+	margin-right: 20px;
+}
+.yisimain .context{
+		width: 100%;
+		height: 100%;
+		overflow-y: auto;
+}
+.yisimain .context .top,.yisimain .context .bottom{
+	width: 100%;
+}
+.yisimain .context .bottom{
+	padding-top: 20px;
+}
+.yisimain .context .top .box,.yisimain .context .bottom .box{
+	width: 33%;
+	min-height: 403px;
+	border:1px solid #ccc;
+	float:left;
+}
+.yisimain .context .bottom .box{
+	min-height: 505px;
+}
+.yisimain .context .top .box:nth-child(2),.yisimain .context .bottom .box:nth-child(2){
+		margin-left: 0.3%;
+}
+.boxheader {
+		width:100%;
+		height: 40px;
+		border-bottom: 1px solid #ccc;
+		background-color: #f6faff;
+}
+.boxheader span{
+	line-height: 40px;
+	padding-left: 13px;
+	color:#333;
+	font-size: 20px;
+}
+.boxheader a{
+	float:right;
+	height: 40px;
+	width: 60px;
+	background: url('../image/ico_4.png') no-repeat scroll center center;
+}
+.daphang div{
+	width: 280px;
+	height: 100px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	float:left;
+	margin-left: 24px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+.daphang div span{
+	font-size: 18px;
+	color:#ffffff;
+	margin-left: 93px;
+	margin-top: 23px;
+	display: inline-block;
+}
+.daphang div.wgh{
+	background: url("../image/ico_5.png") no-repeat scroll 28px center #96a6e7;
+}
+.daphang div.yiti{
+	background: url("../image/ico_6.png") no-repeat scroll 28px center #f57e7e;
+}
+.daphang div.sq{
+	background: url("../image/ico_7.png") no-repeat scroll 28px center #f0ac61;
+}
+.fontcontext ul li{
+		width: 94%;
+		height: 40px;
+		margin: 0 auto;
+		border-bottom:1px dashed #ccc;
+}
+.fontcontext ul.tz li{
+	background: url('../image/ico_8.png') no-repeat scroll 4px center;
+}
+.fontcontext ul.zw li{
+	background: url('../image/ico_9.png') no-repeat scroll 4px center;
+}
+.fontcontext ul li span{
+	width: 85%;
+	line-height: 40px;
+	display: inline-block;
+	padding-left: 35px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.yisimain .context .bottom .type{
+	padding-left: 24px;
+	color:#4a5b79;
+	line-height: 36px;
+	font-weight: bold;
+}
+.yisimain .context .bottom .bjtj{
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 10px;
+}
+.yisimain .context .bottom .bjtj div{
+	display: inline-block;
+	width: 178px;
+	height: 64px;
+	margin-left: 13px;
+}
+.yisimain .context .bottom .bjtj div.d_year{
+	background: url('../image/ico_10.png') no-repeat scroll left center;
+}
+.yisimain .context .bottom .bjtj div.d_month{
+	background: url('../image/ico_11.png') no-repeat scroll left center;
+}
+.yisimain .context .bottom .bjtj div.dn_month{
+	background: url('../image/ico_12.png') no-repeat scroll left center;
+}
+.yisimain .context .bottom .bjtj div span{
+	color:#4c4c4c;
+	font-size: 18px;
+	display: inline-block;
+	margin-left: 65px;
+}
+.yisimain .context .bottom .bjtj div span:first-child{
+	margin-top: 10px;
+}
+.yisimain .context .bottom .bjtj div span.number{
+	font-size: 24px;
+	display: inline-block;
+}
+.yisimain .context .bottom table{
+		width: 94%;
+		margin: 0 auto;
+		table-layout: fixed;
+}
+.yisimain .context .bottom table tr{
+	border-bottom: 1px dashed #ccc;
+	height: 40px;
+}
+.yisimain .context .bottom table tr th{
+		color:#333;
+		font-size: 16px;
+		text-align: left;
+}
+.yisimain .context .bottom table tr .a{
+	color:#f23e3e;
+}
+.yisimain .context .bottom table tr .b{
+	color:#0d9823;
+}
+.yisimain .context .bottom table tr .c{
+	color:#ff8400;
+}
+.yisimain .context .bottom table tr td{
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+.yisimain .context .bottom .xjtj{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 19px;
+}
+.yisimain .context .bottom .xjtj div{
+	display: inline-block;
+	margin-left: 30px;
+
+}
+.yisimain .context .bottom .xjtj div p em{
+	width: 25px;
+	height: 24px;
+	display: inline-block;
+	background: url('../image/ico_16.png') no-repeat scroll center center;
+}
+.yisimain .context .bottom .xjtj div p em.yi{
+		background: url('../image/ico_13.png') no-repeat scroll center center;
+}
+.yisimain .context .bottom .xjtj div p em.er{
+		background: url('../image/ico_14.png') no-repeat scroll center center;
+}
+.yisimain .context .bottom .xjtj div p em.san{
+		background: url('../image/ico_15.png') no-repeat scroll center center;
+}
+.yisimain .context .bottom .xjtj div.si p em{
+		background: url('../image/ico_17.png') no-repeat scroll center center;
+}
+.yisimain .context .bottom .xjtj div p.font{
+	margin-top:4px;
+}
+.loginmain {
+	background-color: #fff;
+	position: relative;
+}
+
+.loginbox {
+	width: 100%;
+	height: 540px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.loginbox .logo {
+	text-align: center;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #4a5b79;
+}
+
+.loginbox .logo span {
+	font-size: 56px;
+	color: #4a5b79;
+}
+
+.loginmain .content {
+	height: 330px;
+	width: 100%;
+	margin-top: 5px;
+	/*.background:url) #4a5b79;*/
+	background: url(../images/map.png) no-repeat scroll 20% 20% #4a5b79;
+	position: relative;
+}
+
+.loginbox .bottom {
+	margin-top: 5px;
+	padding-top: 10px;
+	border-top: 1px solid #4a5b79;
+}
+
+.loginbox .bottom p {
+	text-align: center;
+	color: #4a5b79;
+}
+
+.Loginform {
+	margin-top: 71px;
+	float: right;
+	width: 367px;
+	height: 204px;
+}
+
+.form-message {
+	height: 30px;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-error-text {
+	padding-left: 35px;
+	border: 1px solid #ee86a4;
+	color: #9d2a16;
+	font-family: Microsoft Yahei;
+	height: 26px;
+	line-height: 26px;
+	background: #f8cad7 url('./validatebox_warning.png') center left no-repeat;
+	background-position: 10px 5.5px;
+	border-radius: 4px;
+}
+
+.form-warning-text {
+	padding-left: 35px;
+	border: 1px solid #f8e144;
+	color: #000;
+	font-family: Microsoft Yahei;
+	height: 26px;
+	line-height: 26px;
+	background: #fdf7ce url('./bullet_error.png') center left no-repeat;
+	background-position: 10px 5.5px;
+	border-radius: 4px;
+}
+
+.form-succeed-text {
+	padding-left: 35px;
+	border-radius: 3px;
+	color: #fff;
+	font-family: Microsoft Yahei;
+	border: 1px solid #5e8800;
+	height: 26px;
+	line-height: 26px;
+	background: #62b600 url('./loading1.gif') center left no-repeat;
+	background-position: 10px 5.5px;
+}
+
+.form-account {
+	margin-top: 16px;
+	margin-left: 16px;
+	font-family: Microsoft Yahei;
+	font-size: 12pt;
+	color: #999999;
+}
+
+.form-password {
+	margin-top: 38px;
+	margin-left: 16px;
+	font-family: Microsoft Yahei;
+	font-size: 12pt;
+	color: #999999;
+}
+
+/*#txtaccount {
+	border: none;
+	padding: 0px;
+	height: 32px;
+	line-height: 32px;
+	width: 260px;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 11pt;
+	color: #999999;
+	background-color: #F0EEF1;
+	padding-left: 5px;
+}
+
+#txtpassword {
+	border: none;
+	padding: 0px;
+	height: 32px;
+	line-height: 32px;
+	width: 260px;
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 11pt;
+	color: #999999;
+	background-color: #F0EEF1;
+	padding-left: 5px;
+}*/
+
+.form-bottom {
+	margin-top: 38px;
+	margin-left: 16px;
+	height: 39px;
+	line-height: 39px;
+}
+
+.btlogin {
+	height: 40px;
+	width: 100px;
+	float: right;
+	margin-right: 12px;
+	cursor: pointer;
+}
+
+.contentbottom {
+	width: 430px;
+	position: absolute;
+	right: 15%;
+	top: 90px;
+}
+
+.content .contentbottom ul li {
+	margin-top: 10px;
+}
+
+.content .contentbottom ul li em {
+	font-size: 18px;
+	color: #fff;
+}
+
+.content .contentbottom ul li input {
+	width: 340px;
+	height: 35px;
+	border: none;
+	padding: 0 10px;
+	background-color: #fff;
+	margin-left: 10px;
+}
+
+.loginbtn {
+	width: 360px;
+	height: 35px;
+	font-size: 18px;
+	background: #0173b2;
+	color: #fff;
+	display: inline-block;
+	text-align: center;
+	line-height: 35px;
+	margin-left: 65px;
+	margin-top: 20px;
+}

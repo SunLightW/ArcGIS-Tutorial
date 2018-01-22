@@ -1,4 +1,4 @@
-////////////////////////////////////////天地图加载/////////////////////////////////////////
+////////////////////////////////////////天地图加载.模块///////////////////////////////////////
 var _serverUrls = [
     "http://t0.tianditu.cn/", "http://t1.tianditu.cn/",
     "http://t2.tianditu.cn/", "http://t3.tianditu.cn/",
@@ -30,13 +30,14 @@ var _lodsInfo = [
 
 //构造器
 function TDTWmtsTileLayer(server, layer, localUrl) {
+
     dojo.declare("ogc.wmts.tdtlayer", esri.layers.TiledMapServiceLayer, {
+
         id: "ogc.wmts.tdtlayer",
+
         constructor: function (id) {
             this.id = id || this.id;
-            this.spatialReference = new esri.SpatialReference({
-                wkid: 4326
-            });
+            this.spatialReference = new esri.SpatialReference({wkid: 4326});
 
             this.initialExtent = new esri.geometry.Extent(-180, -90, 180, 90, this.spatialReference);
             this.fullExtent = new esri.geometry.Extent(-180, -90, 180, 90, this.spatialReference);
@@ -69,18 +70,33 @@ function TDTWmtsTileLayer(server, layer, localUrl) {
             return url;
         }
     });
+
     return new ogc.wmts.tdtlayer(server);
 }
+// /**old**/
+// function TDTVectorLayer() {
+//     return TDTWmtsTileLayer("vec_c", "vec", "http://mapwx.com.cn/wmtsservice/wuxi_vector");
+// }
+// function TDTVectorAnnoLayer() {
+//     return TDTWmtsTileLayer("cva_c", "cva", "http://mapwx.com.cn/wmtsservice/wuxi_anno_vector");
+// }
+// function TDTImageLayer() {
+//     return TDTWmtsTileLayer("img_c", "img", "http://mapwx.com.cn/wmtsservice/wuxi_raster");
+// }
+// function TDTImageAnnoLayer() {
+//     return TDTWmtsTileLayer("cia_c", "cia", "http://mapwx.com.cn/wmtsservice/wuxi_anno_raster");
+// }
 
+/**new**/
 function TDTVectorLayer() {
-    return TDTWmtsTileLayer("vec_c", "vec", "http://mapwx.com.cn/wmtsservice/wuxi_vector");
+    return TDTWmtsTileLayer("vec_c", "vec", "http://map.wuxi.gov.cn/wmtsservice/wuxi_vector");
 }
 function TDTVectorAnnoLayer() {
-    return TDTWmtsTileLayer("cva_c", "cva", "http://mapwx.com.cn/wmtsservice/wuxi_anno_vector");
+    return TDTWmtsTileLayer("cva_c", "cva", "http://map.wuxi.gov.cn/wmtsservice/wuxi_anno_vector");
 }
 function TDTImageLayer() {
-    return TDTWmtsTileLayer("img_c", "img", "http://mapwx.com.cn/wmtsservice/wuxi_raster");
+    return TDTWmtsTileLayer("img_c", "img", "http://map.wuxi.gov.cn/wmtsservice/wuxi_raster");
 }
 function TDTImageAnnoLayer() {
-    return TDTWmtsTileLayer("cia_c", "cia", "http://mapwx.com.cn/wmtsservice/wuxi_anno_raster");
+    return TDTWmtsTileLayer("cia_c", "cia", "http://map.wuxi.gov.cn/wmtsservice/wuxi_anno_raster");
 }

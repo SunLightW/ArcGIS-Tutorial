@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>新吴区全要素网格划分平台</title>
+
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="http://106.14.208.167/ArcGIS/3.19/dijit/themes/claro/claro.css">
+    <link type="text/css" rel="stylesheet" href="http://106.14.208.167/ArcGIS/3.19/esri/css/esri.css">
+    <link type="text/css" rel="stylesheet" href="css/style1.css">
+    <link type="text/css" rel="stylesheet" href="css/layui.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="config.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            var Height = $(window).height();
+            $(".context").css({'height': Height - 0});
+            $(window).resize(function () {
+                var Wheight = $(window).height();
+                $(".context").css({'height': Wheight - 0});
+            });
+        })
+    </script>
+    <script src="http://106.14.208.167/ArcGIS/3.19/init.js"></script>
+    <script src="tdt.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="draw_basic/shape.js"></script>
+    <script src="draw_basic/point.js"></script>
+    <script src="draw_basic/addPicture.js"></script>
+    <script src="draw_basic/addText.js"></script>
+    <script src="draw_basic/InfoTip.js"></script>
+    <script src="draw_basic/lineAndFreeLine.js"></script>
+    <script src="utils/query.js"></script>
+    <script src="index.js"></script>
+    <script src="action.js"></script>
+    <style>
+        #map {
+            height: 100%;
+        }
+
+        .yisimain {
+            position: relative;
+        }
+
+        .mapbutton {
+            width: 200px;
+            height: 350px;
+            left: 40px;
+            top: 140px;
+            position: absolute;
+            z-index: 999;
+            background-color: #ccc;
+            /*opacity: 0.5;*/
+        }
+
+        .btn {
+            width: 100px;
+            height: 50px;
+            margin-left: 20px;
+            opacity: 1;
+        }
+
+        #switchEdit {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="yisimain">
+    <div class="mapbutton">
+        <button id="switchEdit" class="btn btn-primary" data-status="off">开启编辑</button>
+        </br>
+        <button id="btnhua" class="btn btn-info" style="display: none;">画网格</button>
+        </br>
+        <input type="checkbox" id="showcom" name="ck" value="checkbox1">显示社区</br>
+        <input type="checkbox" id="showcommini" name="ck" value="checkbox1">显示社区下综合网格</br>
+        <input type="checkbox" id="showcomstore" name="ck" value="checkbox1">显示社区下专属网格</br>
+        <input type="checkbox" id="showrood" name="ck" value="checkbox1">显示街区专属网格</br>
+        <input type="checkbox" id="showstore" name="ck" value="checkbox1">显示园区专属网格</br>
+        <input type="checkbox" id="showstoreall" name="ck" value="checkbox1">显示园区专属下属基础网格
+        <label>
+            <span>请选择社区:</span>
+            <!--<select id="shequselect">-->
+                <!--<option>===请选择===</option>-->
+            <!--</select>-->
+            <input id="sqname">
+            <button id="search_sq">搜索</button>
+        </label>
+    </div>
+    <!--地图-->
+    <div class="context"  data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false">
+        <div id="map"  data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"></div>
+    </div>
+</div>
+
+<!--保存网格弹窗-->
+<div class="mapbox" id="mapbox" style="display: none;">
+    <div class="box_center1">
+        <div class="title1">保存网格</div>
+        <input type="radio" name="grid" id="community"  value="community"/><span style="color: #204d74">社区网格</span>
+        <input type="radio" name="grid" id="communitymini"  value="mini"/>社区辖居村网格
+        <input type="radio" name="grid" id="communitystore"  value="store"/>社区辖园区网格
+        <br>
+        <input type="radio" name="grid" id="rood" value="rood"/><span style="color: #204d74">城市管理网格</span>
+        <br>
+        <input type="radio" name="grid" id="zsstore" value="zsstore"/><span style="color: #204d74">专属园区网格</span>
+        <input type="radio" name="grid" id="zsstoremini" value="zsstoremini"/>专属园区下属单元网格
+        <!--社区级-->
+        <label class="fixed" id="communityselect">
+            <em>社区名称:</em>
+            <select id="shequselect">
+                <option>===请选择===</option>
+            </select>
+        </label>
+        <!--社区级园区&城管-->
+        <label class="fixed" id="shequbaselabel" style="display: none">
+            <em id="shequbasegrid">专属网格名称:</em>
+            <input id="shequgridName" placeholder="请输入网格名称"/>
+        </label>
+        <!--变量网格(随角色不同不同)-->
+        <label class="fixed" id="baselabel" style="display: none">
+            <em id="basegrid">最小单元网格名称:</em>
+            <input id="gridName" placeholder="请输入网格名称"/>
+        </label>
+        <label class="fixed">
+            <em class="a">备注: </em>
+            <textarea id="gridRemark"></textarea>
+        </label>
+
+        <div class="function_true1 fixed" id="formBtns">
+            <span class="saveGrid">保存</span>
+            <span id="cancelGrid" class="true_boxem1">取消</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
